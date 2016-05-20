@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="productos-categorias-lis-BUSCAR.aspx.vb" Inherits="productos_categorias_lis_BUSCAR" %>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/leaf.png" type="image/x-icon">
-    <title>Leaf :: Sistema de Facturacion</title>
+    <title>Leaf :: Buscar Categoria</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -107,44 +109,93 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <div class="caption-full">
+                        <div class="caption-full">
 
-                        <h4>
-                            <a href="#">Listado de Categorias</a>
-                        </h4>
+                            <h4>
+                                <a href="#">Listado de Categorias</a>
+                            </h4>
 
-                        <p><i><strong>Consulte </strong></i>un registro en especifico o todos los registros de la base de datos <strong>Categorias</strong></p>
+                            <p><i><strong>Consulte </strong></i>un registro en especifico o todos los registros de la base de datos <strong>Categorias</strong></p>
 
-                        </br>
+                            </br>
 
-                        <div align="right">
-                            <a href="productos-categorias-lis-BUSCAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span>&nbsp Buscar</a>
-                            <a href="productos-categorias-lis-VER.aspx" class="btn btn-success" role="button"><span class="glyphicon glyphicon-globe"></span>&nbsp Ver Todos</a>
+                            <div align="right">
+                                <a href="productos-categorias-lis-BUSCAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span>&nbsp Buscar</a>
+                                <a href="productos-categorias-lis-VER.aspx" class="btn btn-success" role="button"><span class="glyphicon glyphicon-globe"></span>&nbsp Ver Todos</a>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-            </div>
+                
+
+                     <!-- INSERTAR -->
+                            <div>
+                                <div class="thumbnail">
+                                    <div class="caption-full">
+                        
+                                        <form id="form1" runat="server" class="form-horizontal">
+
+                                            <h3 style="text-align: right" class="gray">Buscar Categoria</h3>
+
+                                        <!-- Formulario -->
+                        
+                                            <div>
+                                                    <label >Clave Categoria:</label>
+                                                    <asp:TextBox ID="idcat" runat="server" CssClass="form-control" placeholder="Clave Categoria"></asp:TextBox>
+                                            </div>
+
+                                            <br />
+                                            <a href = "productos-categorias-lis-BUSCAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
+                            
+                                            <br />
+                                            <asp:Button ID="Button1" runat="server" Text="BUSCAR"/>
+                                            <br />
+                                            <br />
+
+                                            <asp:GridView ID="GV2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                                <Columns>
+                                                    <asp:BoundField DataField="Clave" HeaderText="Clave" ReadOnly="True" SortExpression="Clave" />
+                                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                                    <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                                                </Columns>
+                                                <EditRowStyle BackColor="#999999" />
+                                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                            </asp:GridView>
+                                            
+                           
+                                           
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="SELECCIONAR_CATEGORIA" SelectCommandType="StoredProcedure">
+                                                <SelectParameters>
+                                                    <asp:ControlParameter ControlID="idcat" Name="ClaveCategoria" PropertyName="Text" Type="Int32" />
+                                                </SelectParameters>
+                                            </asp:SqlDataSource>
+                                            
+                           
+                                           
+                                        </div>
+                                        </form>
+                      
+                          
+                                    </div>
+                                </div>
+                            </div>
 
 
 
-            <div class="col-md-9">
 
-                <div class="thumbnail">
-                    <div class="caption-full">
-                        <p>
-                            <h4><span class="glyphicon glyphicon-warning-sign yellow"></span>&nbsp; &nbsp;Ayuda</h4>
-                            <i class="med-font">
-                                Utilice la opcion <strong>Buscar</strong> para buscar una Categoria en especifico utilizando su <strong>Clave.</strong>. </br>
-                                Utilice la opcion <strong>Ver Todos</strong> para visualizar todas las Categorias de la base de datos.
-                            </i>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- FIN COL-9 -->
+        </div>      
 
         </div>
-
     </div>
     <!-- /.container -->
 

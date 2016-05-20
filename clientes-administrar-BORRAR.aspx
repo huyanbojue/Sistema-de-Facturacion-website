@@ -143,7 +143,7 @@
                             <a href = "clientes-administrar-BORRAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
                             
                             <br />
-                            <asp:Button ID="Button1" runat="server" Text="ELIMINAR"/>
+                                <asp:Button ID="Button1" runat="server" Text="ELIMINAR"/>
                             <br />
                            
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1">
