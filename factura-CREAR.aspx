@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="factura-CREAR.aspx.vb" Inherits="factura_CREAR" %>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/leaf.png" type="image/x-icon">
-    <title>Leaf :: Sistema de Facturacion</title>
+    <title>Leaf :: Crear Factura</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-leaf green"></span>&nbsp &nbspLeaf Facturacion</a>
+                <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-leaf green"></span>&nbsp &nbspLeaf Facturacion</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,7 +61,7 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="productos-administrar.html" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp&nbsp Productos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="productos-administrar.html"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp Administrar Productos</a></li>
@@ -70,7 +72,7 @@
                         </ul>
                     </li>   
 
-                    <li>
+                    <li class="active">
                         <a href="factura.html"><span class="glyphicon glyphicon-save-file"></span>&nbsp&nbsp Facturas</a>
                     </li>
                 </ul>
@@ -86,21 +88,15 @@
         <div class="row">
 
             <div class="col-md-3">
-                    <p class="lead">Productos</p>
-                    <div class="list-group">
-
-                        <a href="productos-administrar.html" class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span>&nbsp &nbsp Administrar Productos</a>
-                        
-                        <a href="productos-listado.html" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp &nbsp Listado de Productos</a>
-                    </div>
-
-                    <p class="lead">Categorias</p>
-                    <div class="list-group">
-
-                        <a href="productos-categorias-adm.html" class="list-group-item active"><span class="glyphicon glyphicon-folder-open"></span>&nbsp &nbsp Administrar Categorias</a>
-                        
-                        <a href="productos-categorias-lis.html" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp &nbsp Listado de Categorias</a>
-                    </div>
+                <p class="lead">Facturas</p>
+                <div class="list-group">
+                    <a href="factura.html" class="list-group-item active"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
+                    <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
+                    
+                </div>
+                <div>
+                    <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
+                </div>
             </div>
 
             <div class="col-md-9">
@@ -108,37 +104,88 @@
                 <div class="thumbnail">
                     <div class="caption-full">
                         
-                        <h4><a href="#">Administrador de Categorias</a>
+                        <h4><a href="#">Nueva Factura</a>
                         </h4>
-                        <p><i><strong>Inserte, Modifique y Elimine </strong></i>registros de la base de datos de <strong>Categorias</strong></p>
+                        <p><i><strong>Cree </strong></i>una nueva factura utilizando los campos de las anteriores bases de datos</p>
+
                         </br>
-                        <div  align="right">
-                            <a href = "productos-categorias-adm-INSERTAR.aspx" class = "btn btn-primary" role = "button"><span class="glyphicon glyphicon-plus"></span>&nbsp Insertar</a>    
-                            <a href = "productos-categorias-adm-MODIFICAR.aspx" class = "btn btn-info" role = "button"><span class="glyphicon glyphicon-wrench"></span>&nbsp Modificar</a>
-                            <a href = "productos-categorias-adm-BORRAR.aspx" class = "btn btn-danger" role = "button"><span class="glyphicon glyphicon-trash"></span>&nbsp Borrar</a>  
+
+                        <div align="right">
+                            <a href="factura-CREAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp Crear Factura</a>
+                            <a href="factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-wrench"></span>&nbsp Modificar</a>
+                            <a href="factura-BORRAR.aspx" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp Borrar</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-9">
-
+                
                 <div class="thumbnail">
                     <div class="caption-full">
-                        <p>
-                            <h4><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; &nbsp;Ayuda</h4>
-                            <i class="med-font">
-                                Utilice la opcion <strong>Insertar</strong> para agregar una nueva Categoria a la base de datos. </br>
-                                Utilice la opcion <strong>Modificar</strong> para modificar los registros de alguna Categoria especificando su <strong>Clave.</strong> </br>
-                                Utilice la opcion <strong>Eliminar</strong> para eliminar una Categoria de la base de datos especificando su numero de <strong>Clave.</strong>
-                            </i>
-                        </p>
+                        <form id="form1" runat="server" class="form-horizontal">
+
+                            <h3 style="text-align: right" class="gray">Crear Nueva Factura</h3>
+                        
+
+                        <!-- Formulario -->
+                        
+                            <div>
+                                    <label >Clave Factura:</label>
+                                    <asp:TextBox ID="id" runat="server" CssClass="form-control" placeholder="Clave Factura"></asp:TextBox>
+                            </div>
+
+                            <br />
+                            <div>
+                                    <label >Clave Cliente:</label>
+                                    <asp:TextBox ID="id_clie" runat="server" CssClass="form-control" placeholder="Clave Cliente"></asp:TextBox>
+                            </div>
+                                
+                            <br />
+                            <div>
+                                    <label >Clave Empresa:</label>
+                                    <asp:TextBox ID="id_empresa" runat="server" CssClass="form-control" placeholder="Clave Empresa"></asp:TextBox>
+                            </div>
+
+                            <br />
+                            <div>
+                                    <label >Fecha de Facturacion:</label>
+                                    <asp:TextBox ID="fecha" runat="server" CssClass="form-control" placeholder="Año - Mes - Dia"></asp:TextBox>
+                            </div>
+
+                            
+                            <br />
+                            <a href = "factura-CREAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
+                            
+                            
+                            <br />
+                                <asp:Button ID="Button1" runat="server" Text="CREAR FACTURA"></asp:Button>
+                            <br />
+
+
+
+                            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
+                        
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="INSERTAR_FACTURA" SelectCommandType="StoredProcedure">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="id" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="id_clie" Name="ClaveCliente" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="id_empresa" Name="ClaveEmpresa" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="fecha" DbType="Date" Name="Fecha" PropertyName="Text" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        
+                        </div>
+                        </form>
+
                     </div>
                 </div>
+
+                    
+                
+                
+                 
+
             </div>
-
         </div>
-
     </div>
     <!-- /.container -->
 
