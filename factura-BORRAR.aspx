@@ -99,6 +99,8 @@
                 </div>
             </div>
 
+            </br>
+
             <div class="col-md-9">
 
                 <div class="thumbnail">
@@ -143,7 +145,7 @@
                             <br />
                                 <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
                             <br />
-                              
+                            </br> 
                             <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <a href="factura-reporte-VERI.aspx"><u>Consultelo.</u></a></p>
 
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>

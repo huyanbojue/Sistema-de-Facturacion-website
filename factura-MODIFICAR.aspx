@@ -98,6 +98,8 @@
                     <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
                 </div>
             </div>
+            
+            </br>
 
             <div class="col-md-9">
 

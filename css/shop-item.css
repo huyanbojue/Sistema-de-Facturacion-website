@@ -115,6 +115,18 @@ footer {
 	}
 }
 
+#GV3{
+    font-size: 11px;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+	#GV3{
+        font-size: 8px;
+		width: 100%;
+	}
+}
+
 
 
 /*.dropdown-menu .sub-menu {

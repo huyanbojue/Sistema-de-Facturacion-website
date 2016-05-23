@@ -99,6 +99,8 @@
                 </div>
             </div>
 
+            </br>
+
             <div class="col-md-9">
 
                 <div class="thumbnail">
@@ -156,7 +158,7 @@
                             <br />
                             <div>
                                     <label >Precio Unitario:</label>
-                                    <asp:TextBox ID="preciou" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
+                                    <asp:TextBox ID="preciou" runat="server" CssClass="form-control" placeholder="Precio $ 00.00"></asp:TextBox>
                             </div>
 
                             
