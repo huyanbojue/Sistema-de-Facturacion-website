@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="factura-CREAR.aspx.vb" Inherits="factura_CREAR" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="detalle_factura-MODIFICAR.aspx.vb" Inherits="detalle_factura_MODIFICAR" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/leaf.png" type="image/x-icon">
-    <title>Leaf :: Crear Factura</title>
+    <title>Leaf :: Modificar Detalles Factura</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
                             <li><a href="productos-categorias-adm.html"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp Administrar Categorias</a></li>
                             <li><a href="productos-categorias-lis.html"><span>&nbsp&nbsp&nbsp&nbsp</span>&nbsp Listado Categorias</a></li>
                         </ul>
-                    </li>   
+                    </li>
 
                     <li class="active">
                         <a href="factura.html"><span class="glyphicon glyphicon-save-file"></span>&nbsp&nbsp Facturas</a>
@@ -90,9 +90,9 @@
             <div class="col-md-3">
                 <p class="lead">Facturas</p>
                 <div class="list-group">
-                    <a href="factura.html" class="list-group-item active"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
-                    <a href="detalle_factura.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
-                    
+                    <a href="factura.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
+                    <a href="detalle_factura.html" class="list-group-item active"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
+
                 </div>
                 <div>
                     <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
@@ -103,27 +103,29 @@
 
                 <div class="thumbnail">
                     <div class="caption-full">
-                        
-                        <h4><a href="#">Nueva Factura</a>
+
+                        <h4>
+                            <a href="#">Detalle de la Factura</a>
                         </h4>
-                        <p><i><strong>Cree </strong></i>una nueva factura utilizando los campos de las anteriores bases de datos</p>
+                        <p><i><strong>Modifique </strong></i>los detalles de su factura, como lo son Productos y cantidades.</p>
 
                         </br>
 
                         <div align="right">
-                            <a href="factura-CREAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp Crear Factura</a>
-                            <a href="factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-cog"></span>&nbsp Modificar</a>
-                            <a href="factura-BORRAR.aspx" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp Borrar</a>
+                            <a href="detalle_factura-INSERTAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp Agregar Detalles</a>
+                            <a href="detalle_factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-cog"></span>&nbsp Modificar Detalles</a>
+                            <a href="detalle_factura-BORRAR.aspx" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp Borrar Factura</a>
                         </div>
                     </div>
                 </div>
 
-                
+
                 <div class="thumbnail">
                     <div class="caption-full">
+                       
                         <form id="form1" runat="server" class="form-horizontal">
 
-                            <h3 style="text-align: right" class="gray">Crear Nueva Factura</h3>
+                            <h3 style="text-align: right" class="gray">Modificar Detalles</h3>
                         
 
                         <!-- Formulario -->
@@ -135,29 +137,37 @@
 
                             <br />
                             <div>
-                                    <label >Clave Cliente:</label>
-                                    <asp:TextBox ID="id_clie" runat="server" CssClass="form-control" placeholder="Clave Cliente"></asp:TextBox>
+                                    <label >Clave Producto:</label>
+                                    <asp:TextBox ID="id_clie" runat="server" CssClass="form-control" placeholder="Clave Producto"></asp:TextBox>
                             </div>
                                 
                             <br />
                             <div>
-                                    <label >Clave Empresa:</label>
-                                    <asp:TextBox ID="id_empresa" runat="server" CssClass="form-control" placeholder="Clave Empresa"></asp:TextBox>
+                                    <label >Cantidad:</label>
+                                    <asp:TextBox ID="id_empresa" runat="server" CssClass="form-control" placeholder="Cantidad"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
-                                    <label >Fecha de Facturacion:</label>
-                                    <asp:TextBox ID="fecha" runat="server" CssClass="form-control" placeholder="Año - Mes - Dia"></asp:TextBox>
+                                    <label >IVA:</label>
+                                    <asp:TextBox ID="fecha" runat="server" CssClass="form-control" placeholder="Impuesto al Valor Agregado"></asp:TextBox>
+                            </div>
+
+                            <br />
+                            <div>
+                                    <label >Precio Unitario:</label>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
                             </div>
 
                             
+
+                            
                             <br />
-                            <a href = "factura-CREAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
+                            <a href = "detalle_factura-MODIFICAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
                             
                             
                             <br />
-                                <asp:Button ID="Button1" runat="server" Text="CREAR FACTURA"></asp:Button>
+                                <asp:Button ID="Button1" runat="server" Text="MODIFICAR"></asp:Button>
                             <br />
 
 
@@ -176,13 +186,17 @@
                         </div>
                         </form>
 
+
+
+
+
                     </div>
                 </div>
 
-                    
-                
-                
-                 
+
+
+
+
 
             </div>
         </div>
@@ -204,7 +218,6 @@
 
     </div>
     <!-- /.container -->
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

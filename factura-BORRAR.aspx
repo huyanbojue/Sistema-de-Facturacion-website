@@ -91,7 +91,7 @@
                 <p class="lead">Facturas</p>
                 <div class="list-group">
                     <a href="factura.html" class="list-group-item active"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
-                    <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
+                    <a href="detalle_factura.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
                     
                 </div>
                 <div>
@@ -107,13 +107,13 @@
                         <h4><a href="#">Nueva Factura</a></h4>
                         <p><i><strong>Elimine </strong></i>una nueva factura utilizando su clave de factura</p>
                         <p><strong class="med-font">
-                            <span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun no tengan detalles en ella. Si no recuerda su clave de Factura <u>Consultelo.</u>
+                            <span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun NO tengan detalles en ella. Si no recuerda su clave de Factura <u>Consultelo.</u>
                         </p></strong>
                         </br>
 
                         <div align="right">
                             <a href="factura-CREAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp Crear Factura</a>
-                            <a href="factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-wrench"></span>&nbsp Modificar</a>
+                            <a href="factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-cog"></span>&nbsp Modificar</a>
                             <a href="factura-BORRAR.aspx" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp Borrar</a>
                         </div>
                     </div>
