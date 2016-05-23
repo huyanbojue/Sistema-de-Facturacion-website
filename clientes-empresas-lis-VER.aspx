@@ -122,11 +122,11 @@
                             <asp:GridView ID="GV1" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                    <asp:BoundField DataField="Direccion_Empresa" HeaderText="Direccion_Empresa" SortExpression="Direccion_Empresa" />
-                                    <asp:BoundField DataField="Telefono_Empresa" HeaderText="Telefono_Empresa" SortExpression="Telefono_Empresa" />
-                                    <asp:BoundField DataField="Email_Empresa" HeaderText="Email_Empresa" SortExpression="Email_Empresa" />
+                                    <asp:BoundField DataField="ID" HeaderText="Clave Empresa" ReadOnly="True" SortExpression="ID" />
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Empresa" SortExpression="Nombre" />
+                                    <asp:BoundField DataField="Direccion_Empresa" HeaderText="Direccion" SortExpression="Direccion_Empresa" />
+                                    <asp:BoundField DataField="Telefono_Empresa" HeaderText="Telefono" SortExpression="Telefono_Empresa" />
+                                    <asp:BoundField DataField="Email_Empresa" HeaderText="Email Empresa" SortExpression="Email_Empresa" />
                                 </Columns>
                                 <EditRowStyle BackColor="#999999" />
                                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

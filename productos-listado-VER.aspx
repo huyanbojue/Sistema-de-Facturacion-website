@@ -128,9 +128,9 @@
                             <asp:GridView ID="GV1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:BoundField DataField="Clave" HeaderText="Clave" ReadOnly="True" SortExpression="Clave" />
-                                    <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                    <asp:BoundField DataField="Clave" HeaderText="Clave Producto" ReadOnly="True" SortExpression="Clave" />
+                                    <asp:BoundField DataField="Categoria" HeaderText="Clave Categoria" SortExpression="Categoria" />
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Producto" SortExpression="Nombre" />
                                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                                     <asp:BoundField DataField="Existencia" HeaderText="Existencia" SortExpression="Existencia" />
                                     <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="productos-categorias-lis-VER.aspx.vb" Inherits="productos_categorias_lis_VER" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="factura-reporte-VER.aspx.vb" Inherits="factura_reporte_VER" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/leaf.png" type="image/x-icon">
-    <title>Leaf :: Categorias</title>
+    <title>Leaf :: Ver Reportes</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="productos-administrar.html" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp&nbsp Productos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="productos-administrar.html"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp Administrar Productos</a></li>
@@ -72,7 +72,7 @@
                         </ul>
                     </li>   
 
-                    <li>
+                    <li class="active">
                         <a href="factura.html"><span class="glyphicon glyphicon-save-file"></span>&nbsp&nbsp Facturas</a>
                     </li>
                 </ul>
@@ -88,48 +88,41 @@
         <div class="row">
 
             <div class="col-md-3">
-                    <p class="lead">Productos</p>
-                    <div class="list-group">
+                <p class="lead">Facturas</p>
+                <div class="list-group">
+                    <a href="factura.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
+                    <a href="detalle_factura.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
 
-                        <a href="productos-administrar.html" class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span>&nbsp &nbsp Administrar Productos</a>
-                        
-                        <a href="productos-listado.html" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp &nbsp Listado de Productos</a>
-                    </div>
-
-                    <p class="lead">Categorias</p>
-                    <div class="list-group">
-
-                        <a href="productos-categorias-adm.html" class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span>&nbsp &nbsp Administrar Categorias</a>
-                        
-                        <a href="productos-categorias-lis.html" class="list-group-item active"><span class="glyphicon glyphicon-search"></span>&nbsp &nbsp Listado de Categorias</a>
-                    </div>
+                </div>
+                <div>
+                    <a href="factura-reporte.html" class="list-group-item active"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
+                </div>
             </div>
 
-
             <div class="col-md-9">
-
-               <div>
+            <div>
                 <div class="thumbnail">
                     <div class="caption-full">
                         
                         <form id="form1" runat="server" class="form-horizontal">
+                            <h3 style="text-align: right" class="gray">Reportes Factura</h3>
+                            <a href="factura-reporte.html" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-triangle-left"></span>&nbsp &nbsp Regresar</a>
 
-                            <h3 style="text-align: right" class="gray">Categorias</h3>
-
-                            <a href="productos-categorias-lis.html" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-triangle-left"></span>&nbsp &nbsp Regresar</a>
-
-                        <!-- Formulario -->
+                            <!-- Formulario -->
                         
-                            
-                            
                             <br />
                             <br />
-                            <asp:GridView ID="GV1" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                            <asp:GridView ID="GV1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave Factura" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="Clave categoria" ReadOnly="True" SortExpression="ID" />
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                    <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                                    <asp:BoundField DataField="Clave Factura" HeaderText="Clave Factura" ReadOnly="True" SortExpression="Clave Factura" />
+                                    <asp:BoundField DataField="Nombre Cliente" HeaderText="Nombre Cliente" ReadOnly="True" SortExpression="Nombre Cliente" />
+                                    <asp:BoundField DataField="Empresa" HeaderText="Empresa" SortExpression="Empresa" />
+                                    <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
+                                    <asp:BoundField DataField="Producto" HeaderText="Producto" SortExpression="Producto" />
+                                    <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+                                    <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                                    <asp:BoundField DataField="Fecha Facturacion" HeaderText="Fecha Facturacion" SortExpression="Fecha Facturacion" />
                                 </Columns>
                                 <EditRowStyle BackColor="#999999" />
                                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -143,29 +136,22 @@
                                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                             </asp:GridView>
                         
-                            
-                            
                         
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="MOSTRAR_CATEGORIA" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="BUSCAR_REPORTE_TODOS" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         
-                            
-                            
                         
                         </div>
                         </form>
                       
-                          
                     </div>
                 </div>
             </div>
 
+            
 
 
-
-        <!-- FIN COL-9 -->
         </div>
 
-        </div>
     </div>
     <!-- /.container -->
 
@@ -192,4 +178,5 @@
     <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

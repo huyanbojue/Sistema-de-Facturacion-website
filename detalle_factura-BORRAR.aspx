@@ -145,8 +145,7 @@
                             <br />
                                 <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
                             <br />
-                            
-                            <br />    
+                             
                             <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <u>Consultelo.</u></p>
 
 

@@ -100,31 +100,26 @@
                     </div>
                 </div>
 
+            <!-- VER TODOS -->
             <div class="col-md-9">
-
-            <!-- INSERTAR -->
             <div>
                 <div class="thumbnail">
                     <div class="caption-full">
                         
                         <form id="form1" runat="server" class="form-horizontal">
-
                             <h3 style="text-align: right" class="gray">Clientes</h3>
-
                             <a href="clientes-listado.html" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-triangle-left"></span>&nbsp &nbsp Regresar</a>
 
-                        <!-- Formulario -->
+                            <!-- Formulario -->
                         
-                            
-                            
                             <br />
                             <br />
                             <asp:GridView ID="GV1" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                                    <asp:BoundField DataField="ID" HeaderText="Clave Cliente" ReadOnly="True" SortExpression="ID" />
                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                    <asp:BoundField DataField="Apellido_Paterno" HeaderText="Apellido_Paterno" SortExpression="Apellido_Paterno" />
+                                    <asp:BoundField DataField="Apellido_Paterno" HeaderText="Apellido Paterno" SortExpression="Apellido_Paterno" />
                                     <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="Ocupacion" HeaderText="Ocupacion" SortExpression="Ocupacion" />
@@ -142,13 +137,10 @@
                             </asp:GridView>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="MOSTRAR_CLIENTE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         
-                            
-                            
                         
                         </div>
                         </form>
                       
-                          
                     </div>
                 </div>
             </div>

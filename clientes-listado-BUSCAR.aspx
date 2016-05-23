@@ -155,9 +155,9 @@
                                             <asp:GridView ID="GV2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                 <Columns>
-                                                    <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                                                    <asp:BoundField DataField="ID" HeaderText="Clave Cliente" ReadOnly="True" SortExpression="ID" />
                                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                                    <asp:BoundField DataField="Apelllido_Paterno" HeaderText="Apelllido_Paterno" SortExpression="Apelllido_Paterno" />
+                                                    <asp:BoundField DataField="Apelllido_Paterno" HeaderText="Apelllido Paterno" SortExpression="Apelllido_Paterno" />
                                                     <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
                                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                                     <asp:BoundField DataField="Ocupacion" HeaderText="Ocupacion" SortExpression="Ocupacion" />
