@@ -144,7 +144,7 @@
                                 <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
                             <br />
                               
-                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <u>Consultelo.</u></p>
+                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <a href="factura-reporte-VERI.aspx"><u>Consultelo.</u></a></p>
 
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
                         

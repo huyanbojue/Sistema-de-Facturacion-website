@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="detalle_factura-BORRAR.aspx.vb" Inherits="detalle_factura_BORRAR" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="factura-reporte-VERII.aspx.vb" Inherits="factura_reporte_VERII" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/leaf.png" type="image/x-icon">
-    <title>Leaf :: Eliminar Factura</title>
+    <title>Leaf :: Ver Reportes</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
                             <li><a href="productos-categorias-adm.html"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp Administrar Categorias</a></li>
                             <li><a href="productos-categorias-lis.html"><span>&nbsp&nbsp&nbsp&nbsp</span>&nbsp Listado Categorias</a></li>
                         </ul>
-                    </li>
+                    </li>   
 
                     <li class="active">
                         <a href="factura.html"><span class="glyphicon glyphicon-save-file"></span>&nbsp&nbsp Facturas</a>
@@ -91,93 +91,67 @@
                 <p class="lead">Facturas</p>
                 <div class="list-group">
                     <a href="factura.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>&nbsp &nbsp Nueva Factura</a>
-                    <a href="detalle_factura.html" class="list-group-item active"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
+                    <a href="detalle_factura.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
 
                 </div>
                 <div>
-                    <a href="factura-reporte.html" class="list-group-item"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
+                    <a href="factura-reporte.html" class="list-group-item active"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
                 </div>
             </div>
 
             <div class="col-md-9">
-
+            <div>
                 <div class="thumbnail">
                     <div class="caption-full">
-
-                        <h4>
-                            <a href="#">Eliminar Factura</a>
-                        </h4>
-                        <p><i><strong>Elimine </strong></i>su Factura definitivamente de la base de datos.</p>
-                         <strong class="med-font">
-                            <p><span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Eliminara tanto Detalles de la Factura, como la Factura misma.</p>
-                        </strong>
-                        </br>
-
-                        <div align="right">
-                            <a href="detalle_factura-INSERTAR.aspx" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp Agregar Detalles</a>
-                            <a href="detalle_factura-MODIFICAR.aspx" class="btn btn-info" role="button"><span class="glyphicon glyphicon-cog"></span>&nbsp Modificar Detalles</a>
-                            <a href="detalle_factura-BORRAR.aspx" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp Borrar Factura</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="thumbnail">
-                    <div class="caption-full">
-                       
+                        
                         <form id="form1" runat="server" class="form-horizontal">
+                            <h3 style="text-align: right" class="gray">Reportes Factura</h3>
+                            <a href="detalle_factura-BORRAR.aspx" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-triangle-left"></span>&nbsp &nbsp Regresar</a>
 
-                            <h3 style="text-align: right" class="gray">Eliminar Factura</h3>
+                            <!-- Formulario -->
                         
-
-                        <!-- Formulario -->
+                            <br />
+                            <br />
+                            <asp:GridView ID="GV1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave Factura" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                <Columns>
+                                    <asp:BoundField DataField="Clave Factura" HeaderText="Clave Factura" ReadOnly="True" SortExpression="Clave Factura" />
+                                    <asp:BoundField DataField="Nombre Cliente" HeaderText="Nombre Cliente" ReadOnly="True" SortExpression="Nombre Cliente" />
+                                    <asp:BoundField DataField="Empresa" HeaderText="Empresa" SortExpression="Empresa" />
+                                    <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
+                                    <asp:BoundField DataField="Producto" HeaderText="Producto" SortExpression="Producto" />
+                                    <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+                                    <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                                    <asp:BoundField DataField="Fecha Facturacion" HeaderText="Fecha Facturacion" SortExpression="Fecha Facturacion" />
+                                </Columns>
+                                <EditRowStyle BackColor="#999999" />
+                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                            </asp:GridView>
                         
-                            <div>
-                                    <label >Clave Factura:</label>
-                                    <asp:TextBox ID="id" runat="server" CssClass="form-control" placeholder="Clave Factura"></asp:TextBox>
-                            </div>
-
-                            
-                            <br />
-                            <a href = "detalle_factura-BORRAR.aspx" class = "btn" role = "button"><span class="glyphicon glyphicon-erase"></span>&nbsp Limpiar</a>
-                            
-                            
-                            <br />
-                                <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
-                            <br />
-                             
-                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <a href="factura-reporte-VERII.aspx"><u>Consultelo.</u></a></p>
-
-
-                            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
-
-                            
                         
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="ELIMINAR_DET_FACTURAS" SelectCommandType="StoredProcedure">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="id" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
-
-                            
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="BUSCAR_REPORTE_TODOS" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                        
                         
                         </div>
                         </form>
-
-
-
-
-
+                      
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
+
+            
+
+
         </div>
+
     </div>
     <!-- /.container -->
 
@@ -196,6 +170,7 @@
 
     </div>
     <!-- /.container -->
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

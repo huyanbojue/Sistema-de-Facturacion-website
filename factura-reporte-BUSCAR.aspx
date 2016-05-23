@@ -146,7 +146,7 @@
                             <br />
                             
                                
-                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <u>Consultelo.</u></p>
+                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <a href="factura-reporte-VER.aspx"><u>Consultelo.</u></a></p>
 
                             <br />
                             <asp:GridView ID="GV1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave Factura" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="#333333">
