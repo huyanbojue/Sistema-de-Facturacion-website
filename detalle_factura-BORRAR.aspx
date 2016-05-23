@@ -108,7 +108,9 @@
                             <a href="#">Eliminar Factura</a>
                         </h4>
                         <p><i><strong>Elimine </strong></i>su Factura definitivamente de la base de datos.</p>
-
+                         <strong class="med-font">
+                            <p><span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Eliminara tanto Detalles de la Factura, como la Factura misma.</p>
+                        </strong>
                         </br>
 
                         <div align="right">
@@ -143,12 +145,20 @@
                             <br />
                                 <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
                             <br />
+                            
+                            <br />    
+                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <u>Consultelo.</u></p>
 
-                           
+
+                            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
 
                             
                         
-                            <!-- DATA SOURCE HERE-->
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="ELIMINAR_DET_FACTURAS" SelectCommandType="StoredProcedure">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="id" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
 
                             
                         

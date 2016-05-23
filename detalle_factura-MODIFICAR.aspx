@@ -132,31 +132,37 @@
                         
                             <div>
                                     <label >Clave Factura:</label>
-                                    <asp:TextBox ID="id" runat="server" CssClass="form-control" placeholder="Clave Factura"></asp:TextBox>
+                                    <asp:TextBox ID="idfac" runat="server" CssClass="form-control" placeholder="Clave Factura"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
                                     <label >Clave Producto:</label>
-                                    <asp:TextBox ID="id_clie" runat="server" CssClass="form-control" placeholder="Clave Producto"></asp:TextBox>
+                                    <asp:TextBox ID="id_prod" runat="server" CssClass="form-control" placeholder="Clave Producto"></asp:TextBox>
                             </div>
                                 
                             <br />
                             <div>
-                                    <label >Cantidad:</label>
-                                    <asp:TextBox ID="id_empresa" runat="server" CssClass="form-control" placeholder="Cantidad"></asp:TextBox>
+                                    <label >Nueva Cantidad:</label>
+                                    <asp:TextBox ID="nva_cantidad" runat="server" CssClass="form-control" placeholder="Cantidad a corregir"></asp:TextBox>
+                            </div>
+
+                            <br />
+                            <div>
+                                    <label >Cantidad Erronea:</label>
+                                    <asp:TextBox ID="cantidad_e" runat="server" CssClass="form-control" placeholder="Nueva Cantidad"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
                                     <label >IVA:</label>
-                                    <asp:TextBox ID="fecha" runat="server" CssClass="form-control" placeholder="Impuesto al Valor Agregado"></asp:TextBox>
+                                    <asp:TextBox ID="iva" runat="server" CssClass="form-control" placeholder="Impuesto al Valor Agregado"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
                                     <label >Precio Unitario:</label>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
+                                    <asp:TextBox ID="precio_u" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
                             </div>
 
                             
@@ -171,17 +177,20 @@
                             <br />
 
 
-
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
+                            
                         
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="INSERTAR_FACTURA" SelectCommandType="StoredProcedure">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="MODIFICAR_DETALLE" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
-                                    <asp:ControlParameter ControlID="id" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="id_clie" Name="ClaveCliente" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="id_empresa" Name="ClaveEmpresa" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="fecha" DbType="Date" Name="Fecha" PropertyName="Text" />
+                                    <asp:ControlParameter ControlID="idfac" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="id_prod" Name="ClaveProducto" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="nva_cantidad" Name="Cantidad" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="cantidad_e" Name="CantidadModi" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="iva" Name="Iva" PropertyName="Text" Type="Double" />
+                                    <asp:ControlParameter ControlID="precio_u" Name="PrecioU" PropertyName="Text" Type="Decimal" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
+                            
                         
                         </div>
                         </form>

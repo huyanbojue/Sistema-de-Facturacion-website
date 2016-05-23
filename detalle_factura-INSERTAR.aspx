@@ -138,25 +138,25 @@
                             <br />
                             <div>
                                     <label >Clave Producto:</label>
-                                    <asp:TextBox ID="id_clie" runat="server" CssClass="form-control" placeholder="Clave Producto"></asp:TextBox>
+                                    <asp:TextBox ID="id_prod" runat="server" CssClass="form-control" placeholder="Clave Producto"></asp:TextBox>
                             </div>
                                 
                             <br />
                             <div>
                                     <label >Cantidad:</label>
-                                    <asp:TextBox ID="id_empresa" runat="server" CssClass="form-control" placeholder="Cantidad"></asp:TextBox>
+                                    <asp:TextBox ID="cant" runat="server" CssClass="form-control" placeholder="Cantidad"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
                                     <label >IVA:</label>
-                                    <asp:TextBox ID="fecha" runat="server" CssClass="form-control" placeholder="Impuesto al Valor Agregado"></asp:TextBox>
+                                    <asp:TextBox ID="iva" runat="server" CssClass="form-control" placeholder="Impuesto al Valor Agregado"></asp:TextBox>
                             </div>
 
                             <br />
                             <div>
                                     <label >Precio Unitario:</label>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
+                                    <asp:TextBox ID="preciou" runat="server" CssClass="form-control" placeholder="Precio Unitario Producto"></asp:TextBox>
                             </div>
 
                             
@@ -174,12 +174,13 @@
 
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
                         
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="INSERTAR_FACTURA" SelectCommandType="StoredProcedure">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FacturacionConnectionString %>" SelectCommand="INSERTAR_DETALLE" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
                                     <asp:ControlParameter ControlID="id" Name="ClaveFactura" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="id_clie" Name="ClaveCliente" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="id_empresa" Name="ClaveEmpresa" PropertyName="Text" Type="Int32" />
-                                    <asp:ControlParameter ControlID="fecha" DbType="Date" Name="Fecha" PropertyName="Text" />
+                                    <asp:ControlParameter ControlID="id_prod" Name="ClaveProducto" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="cant" Name="Cantidad" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="iva" Name="Iva" PropertyName="Text" Type="Double" />
+                                    <asp:ControlParameter ControlID="preciou" Name="PrecioU" PropertyName="Text" Type="Decimal" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
                         

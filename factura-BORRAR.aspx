@@ -106,9 +106,11 @@
                         
                         <h4><a href="#">Nueva Factura</a></h4>
                         <p><i><strong>Elimine </strong></i>una nueva factura utilizando su clave de factura</p>
-                        <p><strong class="med-font">
-                            <span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun NO tengan detalles en ella. Si no recuerda su clave de Factura <u>Consultelo.</u>
-                        </p></strong>
+                        <strong class="med-font">
+                            <p><span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun NO tengan detalles en ella.</p>
+                            <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Si desea eliminar una Factura con detalles hagalo desde <u>Detalle de Facturas</u>.</p>
+                        </strong>
+                        
                         </br>
 
                         <div align="right">
@@ -141,8 +143,9 @@
                             <br />
                                 <asp:Button ID="Button1" runat="server" Text="ELIMINAR"></asp:Button>
                             <br />
-
-
+                            
+                            <br />    
+                            <p class="med-font" align="right"><span class="glyphicon glyphicon-question-sign blue"></span>&nbsp; Si no recuerda su clave de Factura <u>Consultelo.</u></p>
 
                             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
                         
