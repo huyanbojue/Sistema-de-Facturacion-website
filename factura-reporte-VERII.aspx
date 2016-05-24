@@ -94,11 +94,11 @@
                     <a href="detalle_factura.html" class="list-group-item"><span class="glyphicon glyphicon-info-sign"></span>&nbsp &nbsp Detalle de Facturas</a>
 
                 </div>
-                <div>
+                <div class="list-group">
                     <a href="factura-reporte.html" class="list-group-item active"><span class="glyphicon glyphicon-flag"></span>&nbsp &nbsp Reporte de Facturas</a>
                 </div>
             </div>
-            </br>
+            
             <div class="col-md-9">
             <div>
                 <div class="thumbnail">
@@ -112,7 +112,7 @@
                         
                             <br />
                             <br />
-                            <asp:GridView ID="GV3" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave Factura" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                            <asp:GridView ID="GV3" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Clave Factura" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
                                     <asp:BoundField DataField="Clave Factura" HeaderText="Clave Factura" ReadOnly="True" SortExpression="Clave Factura" />
