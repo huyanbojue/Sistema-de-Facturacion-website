@@ -198,6 +198,10 @@ p.copyright {
     animation-delay: 1.50s;
 }
 
+.delayy3{
+    animation-delay: 0.25s;
+}
+
 .green{
     color:#08CC0D;
 }
