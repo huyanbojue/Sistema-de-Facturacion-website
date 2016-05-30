@@ -18,7 +18,7 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-item.css" rel="stylesheet">
-
+    <link href="css/animate.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -109,7 +109,7 @@
                         <h4><a href="#">Nueva Factura</a></h4>
                         <p><i><strong>Elimine </strong></i>una nueva factura utilizando su clave de factura</p>
                         <strong class="med-font">
-                            <p><span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun NO tengan detalles en ella.</p>
+                            <p><span class="glyphicon glyphicon-alert yellow"></span> &nbsp; &nbsp; &nbsp;Solo podra eliminar Facturas que aun <u>NO tengan detalles en ella.</u></p>
                             <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Si desea eliminar una Factura con detalles hagalo desde <u>Detalle de Facturas</u>.</p>
                         </strong>
                         
